@@ -1,48 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Genesys Web Messenger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Genesys Web - Prueba GitHub Pages</title>
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: transparent;
-    }
-  </style>
-
-  <!-- ✅ GENESYS WEB MESSENGER -->
+  <!-- Genesys Bootstrap -->
   <script type="text/javascript" charset="utf-8">
     (function (g, e, n, es, ys) {
-      g["_genesysJs"] = e;
+      g['_genesysJs'] = e;
       g[e] = g[e] || function () {
         (g[e].q = g[e].q || []).push(arguments);
       };
       g[e].t = 1 * new Date();
       g[e].c = es;
-      ys = document.createElement("script");
-      ys.async = true;
+      ys = document.createElement('script');
+      ys.async = 1;
       ys.src = n;
-      ys.charset = "utf-8";
+      ys.charset = 'utf-8';
       document.head.appendChild(ys);
-    })(
-      window,
-      "Genesys",
-      "https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js",
-      {
-        environment: "prod",
-        deploymentId: "ad5b24f8-6e79-4f30-80ec-34ba5ad18447"
-      }
-    );
+    })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+      environment: 'prod',
+      deploymentId: 'ad5b24f8-6e79-4f30-80ec-34ba5ad18447'
+    });
   </script>
+
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; padding: 24px; }
+    .card { max-width: 760px; padding: 18px 20px; border: 1px solid #e5e5e5; border-radius: 12px; }
+    code { background: #f6f6f6; padding: 2px 6px; border-radius: 6px; }
+  </style>
 </head>
 
 <body>
-  <!-- Página intencionalmente vacía -->
+  <div class="card">
+    <h1>Genesys Web Messaging</h1>
+    <p>
+      Esta página está publicada en <strong>GitHub Pages</strong> y carga el bootstrap de Genesys con el deployment:
+      <code>ad5b24f8-6e79-4f30-80ec-34ba5ad18447</code>
+    </p>
+    <p>
+      Si tu deployment tiene Web Messenger habilitado, deberías ver el widget/bot cuando termine de cargar.
+    </p>
+  </div>
 </body>
 </html>
