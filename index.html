@@ -1,73 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prueba Genesys Web Messaging</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud IA Reclamo</title>
 
   <style>
-    body { font-family: Arial, sans-serif; padding: 24px; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 24px; }
     .card { max-width: 820px; border: 1px solid #e6e6e6; border-radius: 12px; padding: 18px 20px; }
-    .ok { color: #137333; font-weight: 700; }
-    .hint { color: #444; }
+    code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
   </style>
 
-  <!-- 1) Genesys Bootstrap -->
   <script type="text/javascript" charset="utf-8">
     (function (g, e, n, es, ys) {
       g["_genesysJs"] = e;
-      g[e] = g[e] || function () { (g[e].q = g[e].q || []).push(arguments); };
+      g[e] = g[e] || function () {
+        (g[e].q = g[e].q || []).push(arguments);
+      };
       g[e].t = 1 * new Date();
       g[e].c = es;
       ys = document.createElement("script");
-      ys.async = 1;
+      ys.async = true;
       ys.src = n;
       ys.charset = "utf-8";
       document.head.appendChild(ys);
-    })(window, "Genesys", "https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js", {
-      environment: "prod",
-      deploymentId: "ad5b24f8-6e79-4f30-80ec-34ba5ad18447"
-    });
-  </script>
-
-  <!-- 2) Cuando Messenger esté listo, lo abrimos -->
-  <script type="text/javascript">
-    (function () {
-      function openMessenger() {
-        try {
-          window.Genesys("command", "Messenger.open");
-          console.log("✅ Se ejecutó Messenger.open");
-        } catch (e) {
-          console.log("⏳ Genesys aún no disponible, reintentando...", e);
-          setTimeout(openMessenger, 800);
-        }
+    })(
+      window,
+      "Genesys",
+      "https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js",
+      {
+        environment: "prod",
+        deploymentId: "dae0ef00-d210-49a7-a94a-8741127c4da7"
       }
-
-      // Espera a que cargue Genesys y luego abre
-      window.addEventListener("load", function () {
-        // Suscripción (si está disponible) para saber que está listo
-        try {
-          window.Genesys("subscribe", "Messenger.ready", function () {
-            console.log("✅ Messenger.ready");
-            window.Genesys("command", "Messenger.open");
-          });
-        } catch (e) {
-          // Si subscribe aún no existe, hacemos reintentos hasta poder abrir
-          openMessenger();
-        }
-      });
-    })();
+    );
   </script>
 </head>
 
 <body>
   <div class="card">
-    <h1>Genesys Web Messaging</h1>
-    <p class="ok">✅ La página cargó correctamente (GitHub Pages OK)</p>
-    <p class="hint">
-      Si el widget no aparece incluso abriéndolo por código, el bloqueo está en el deployment (dominio no permitido o messenger/launcher deshabilitado).
-    </p>
-    <p><strong>deploymentId:</strong> ad5b24f8-6e79-4f30-80ec-34ba5ad18447</p>
+    <h1>Cloud IA Reclamo</h1>
+    <p>Web publicada en GitHub Pages y conectada a Genesys Web Messenger.</p>
+    <p><strong>Deployment:</strong> <code>dae0ef00-d210-49a7-a94a-8741127c4da7</code></p>
+    <p>Si no ves el ícono, revisa el whitelist del deployment.</p>
   </div>
 </body>
 </html>
